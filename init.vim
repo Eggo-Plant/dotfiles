@@ -53,3 +53,18 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in
 " Limelight color settings
 let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_paragraph_span = 1
+
+" Some remaps
+cnoreabbrev nt NERDTree
+cnoreabbrev LL Limelight
+cnoreabbrev LL! Limelight!
+
+" Keybinds to move between tiles using ctrl + direction
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-Down> <C-W><C-J>
+nnoremap <C-Up> <C-W><C-K>
+nnoremap <C-Right> <C-W><C-L>
+nnoremap <C-Left> <C-W><C-H>
