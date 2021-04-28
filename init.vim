@@ -22,7 +22,8 @@ Plug 'bling/vim-airline'				" More config options for the appearance of the curr
 Plug 'tpope/vim-commentary'				" Makes it easy to comment out things
 Plug 'ap/vim-css-color'					" Provides color highlighting for CSS color codes/names
 Plug 'roxma/vim-paste-easy'				" Unbreaks weird indents when pasting things
-Plug 'farmergreg/vim-lastplace'				" Plugin to center cursor on last edit when reopening a file
+Plug 'farmergreg/vim-lastplace'				" Plugin to center cursor on last edit when re-opening a file
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }	" Easily format js, ts, less, scss, css, json, graphwl, and md files with :Prettier
 call plug#end()
 
 " Basic settings
@@ -35,6 +36,12 @@ set ignorecase			" Ignores case when searching
 set linebreak			" Tries to prevent breaking a line in the middle of a word
 set clipboard+=unnamedplus	" Synchronizes vim clipboard with system clipboard
 
+" Disables automatic newline comments
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" Sets split to open at the bottom-right
+set splitbelow splitright
+
 " Turns off highlighting on the bits of code that are changed, so the line that is changed is highlighted but the actual text that has changed stands out on the line and is readable.
 if &diff
     highlight! link DiffText MatchParen
@@ -44,6 +51,9 @@ endif
 autocmd BufWritePre * %s/\s\+$//e
 autocmd BufWritePre * %s/\n\+\%$//e
 autocmd BufWritePre *.[ch] %s/\%$/\r/e
+
+" Use :w!! to write files as sudo when they require root permission
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
 " Alias Replace all (%s) to S.
 nnoremap S :%s//g<Left><Left>
@@ -63,11 +73,11 @@ cnoreabbrev LL Limelight
 cnoreabbrev LL! Limelight!
 
 " Keybinds to move between tiles using ctrl + direction
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-nnoremap <C-Down> <C-W><C-J>
-nnoremap <C-Up> <C-W><C-K>
-nnoremap <C-Right> <C-W><C-L>
-nnoremap <C-Left> <C-W><C-H>
+nnoremap <C-H> <C-W>h
+nnoremap <C-J> <C-W>j
+nnoremap <C-K> <C-W>k
+nnoremap <C-L> <C-W>l
+nnoremap <C-Left> <C-W>h
+nnoremap <C-Down> <C-W>j
+nnoremap <C-Up> <C-W>k
+nnoremap <C-Right> <C-W>l
