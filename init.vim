@@ -15,11 +15,14 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }	" Code autocompletion
 Plug 'preservim/nerdtree'				" Tree sidebar for multi-file projects
+Plug 'ryanoasis/vim-devicons'				" Adds icons to nerdtree
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'		" Syntax highlighting to nerdtree
 Plug 'junegunn/limelight.vim'				" Run :Limelight to help focus on specific blocks on code
 Plug 'bling/vim-airline'				" More config options for the appearance of the currently selected line
 Plug 'tpope/vim-commentary'				" Makes it easy to comment out things
 Plug 'ap/vim-css-color'					" Provides color highlighting for CSS color codes/names
 Plug 'roxma/vim-paste-easy'				" Unbreaks weird indents when pasting things
+Plug 'farmergreg/vim-lastplace'				" Plugin to center cursor on last edit when reopening a file
 call plug#end()
 
 " Basic settings
