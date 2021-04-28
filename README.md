@@ -1,5 +1,5 @@
-# nvim
-**My dotfiles for nvim**
+# Neovim Dotfiles
+**My homebrew init.vim file for Neovim**
 >this might work with vim but I haven't tried it.
 It can be a drag and drop replacement for any nvim config. The config will auto-install the correct plugin manager (vim-plug), and install any required plugins on first boot.
 
