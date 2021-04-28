@@ -14,3 +14,4 @@ It can be a drag and drop replacement for any nvim config. The config will auto-
 * [**Vim-CSS-Color**](https://github.com/ap/vim-css-color) - Adds color highlighting in CSS files for color codes/names
 * [**Vim-Paste-Easy**](https://github.com/roxma/vim-paste-easy) - Unbreaks weird indent issues when pasting multiple lines
 * [**Vim-Lastplace**](https://github.com/farmergreg/vim-lastplace) - Centers the cursor on previous position when re-opening a file
+* [**Vim-Prettier**](https://github.com/prettier/vim-prettier) - Allows you to format several files with the command `:Prettier`
