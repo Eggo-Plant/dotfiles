@@ -6,3 +6,4 @@ All my config files that I spend a relatively signficiant amount of time working
 
 - [Neovim Configs](https://github.com/Eggo-Plant/dotfiles/tree/main/neovim)
 - [Tmux Configs](https://github.com/Eggo-Plant/dotfiles/tree/main/tmux)
+- [Dunst Configs](https://github.com/Eggo-Plant/dotfiles/tree/main/dunst)
